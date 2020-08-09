@@ -8,7 +8,28 @@ spring:
     username: root
     password: 123456
 
+  redis:
+    host: localhost # 服务器地址
+    database: 0 #默认索引为0
+    port: 6379
+    password: #默认为空
+    jedis:
+      pool:
+        max-active: 8 #最大；最大连接池数（使用负数表示没有限制）
+        max-wait: -1ms #最大阻塞等待时间
+        max-idle: 8 #最大空闲连接
+        min-idle: 0
+      timeout: 3000ms #连接超时时间(毫秒)
+
 mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
+
+# 自定义redis key
+redis:
+  key:
+    prefix:
+      authCode: "portal:authCode:"
+    expire:
+      authCode: 120 # 验证码超期时间
