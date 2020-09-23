@@ -6,7 +6,9 @@ import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Generator {
@@ -30,5 +32,9 @@ public class Generator {
         for (String warning : warnings) {
             System.out.println(warning);
         }
+
+        Date d = new Date(System.currentTimeMillis() + 3600 * 12 * 1000);
+        SimpleDateFormat sdf1 =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss" );
+        System.out.println(sdf1.format(d));
     }
 }
