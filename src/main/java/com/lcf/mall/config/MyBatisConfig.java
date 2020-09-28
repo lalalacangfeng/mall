@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * MyBatis配置类
- * Created by macro on 2019/4/8.
  */
 @Configuration
 @MapperScan({"com.lcf.mall.mbg.mapper","com.lcf.mall.dao"})
